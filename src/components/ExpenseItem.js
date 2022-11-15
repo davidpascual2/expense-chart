@@ -1,12 +1,14 @@
 import './ExpenseItem.css'
 
-function ExpenseItem() {
+function ExpenseItem(props) {
+    //in regular js we use parameters to pass data into functions 
+    
     return (
         <div className='expense-item'>
-            <div>March 28th 2022</div>
+            <div>{props.date.toISOString()}</div>
             <div className='expense-item-desc'>
-                <h2>Car Insurance</h2>
-                <div className='expense-item-price'>$194.67</div>
+                <h2>{props.title}</h2>
+                <div className='expense-item-price'>${props.amount}</div>
             </div>
         </div>
     );
